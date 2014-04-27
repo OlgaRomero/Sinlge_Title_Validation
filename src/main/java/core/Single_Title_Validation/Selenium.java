@@ -10,9 +10,16 @@ public class Selenium {
 		WebDriver driver = new FirefoxDriver();    // Version 1.1 :: Firefox
  
 		String text_case_id = "TC-001.01";
-		String url = "http://www.learn2test.net";
+		//String url = "http://www.learn2test.net";
 	//String title_expected = "CNN.com - Breaking News, U.S., World, Weather, Entertainment & Video News";
-		String title_expected = "learn2test.net";
+		//String title_expected = "learn2test.net";
+		//replaced hard coded variables
+		String param[] = args[0].split("\\|");
+        
+		String url = param[0];
+		String title_expected = param[1];
+		//end of replacement 
+		
 		
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
